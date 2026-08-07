@@ -1,0 +1,2 @@
+class CSVLockedError(Exception):
+    pass

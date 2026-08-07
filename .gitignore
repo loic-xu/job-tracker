@@ -1,5 +1,6 @@
 data/candidatures.csv
 __pycache__/
 *.pyc
-venv/
 .env
+job-tracker-env
+.agents
