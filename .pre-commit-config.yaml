@@ -12,12 +12,12 @@ repos:
     hooks:
       - id: mypy
         additional_dependencies: [pandas-stubs]
-        
+
   - repo: local
     hooks:
       - id: pytest
         name: run unit tests
-        entry: pytest
+        entry: py -m pytest
         language: system
         types: [python]
         pass_filenames: false

@@ -25,11 +25,12 @@ pip install -r server/requirements.txt
 ```
 
 ### 3. Enable Git Hooks (`pre-commit` & `pre-push`)
-This project uses **Ruff** (linting/formatting), **Mypy** (type checking on commit), and **Pytest** (unit tests on push).
+This project uses **Ruff** (linting/formatting), **Mypy** (type checking), and **Pytest** (unit tests).
+*Note: `pre-commit` automatically downloads and isolates Ruff & Mypy. You only need to install `pre-commit` itself!*
 
 ```bash
-# Install pre-commit, ruff & mypy
-pip install pre-commit ruff mypy
+# Install pre-commit
+pip install pre-commit
 
 # Enable local Git hooks
 py -m pre_commit install
