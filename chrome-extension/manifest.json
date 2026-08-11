@@ -1,0 +1,12 @@
+{
+    "manifest_version": 3,
+    "name": "Job Tracker",
+    "version": "1.0.0",
+    "description": "Chrome extension that allows to save and tracks the jobs.",
+    "host_permissions": [
+        "http://localhost:5000/*"
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    }
+}
