@@ -1,11 +1,18 @@
+# Data & Credentials
 data/candidatures.csv
+.env
+
+# Python Caches & Virtual Environments
 __pycache__/
 *.pyc
-.env
-job-tracker-env
-.agents
+job-tracker-env/
+venv/
+.venv/
 
-
+# Tooling Caches
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
+
+# Agent Configuration
+.agents/
