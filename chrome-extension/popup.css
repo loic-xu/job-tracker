@@ -434,6 +434,20 @@ tr:nth-child(even):hover td {
 }
 
 /* Link in table */
+.table-date-input {
+    padding: 2px 6px;
+    font-size: 11px;
+    background: var(--bg-input);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    width: 100%;
+}
+
+.table-date-input:focus {
+    border-color: var(--accent-end);
+}
+
 .app-link {
     color: var(--accent-end);
     text-decoration: none;

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
@@ -10,7 +10,7 @@
 <body>
     <header>
         <h1>💼 Job Tracker</h1>
-        <span id="connection-status" title="Statut du serveur">⚪ Déconnecté</span>
+        <span id="connection-status" title="Server Status">⚪ Disconnected</span>
     </header>
 
     <main>
@@ -23,23 +23,23 @@
                 </div>
                 <div class="stat-card" id="stat-a-postuler">
                     <span class="stat-value">0</span>
-                    <span class="stat-label">À postuler</span>
+                    <span class="stat-label">To Apply</span>
                 </div>
                 <div class="stat-card" id="stat-postule">
                     <span class="stat-value">0</span>
-                    <span class="stat-label">Postulé</span>
+                    <span class="stat-label">Applied</span>
                 </div>
                 <div class="stat-card" id="stat-entretien">
                     <span class="stat-value">0</span>
-                    <span class="stat-label">Entretien</span>
+                    <span class="stat-label">Interview</span>
                 </div>
                 <div class="stat-card" id="stat-refus">
                     <span class="stat-value">0</span>
-                    <span class="stat-label">Refus</span>
+                    <span class="stat-label">Rejected</span>
                 </div>
                 <div class="stat-card" id="stat-accepte">
                     <span class="stat-value">0</span>
-                    <span class="stat-label">Accepté</span>
+                    <span class="stat-label">Accepted</span>
                 </div>
             </div>
             <div id="progress-bar" class="progress-bar">
@@ -53,61 +53,61 @@
 
         <!-- Add application form -->
         <section id="form">
-            <h2>Ajouter une candidature</h2>
+            <h2>Add Job Application</h2>
             <form id="add-form">
                 <div class="form-grid">
                     <div class="form-group">
-                        <label for="input-company">Entreprise</label>
+                        <label for="input-company">Company</label>
                         <input type="text" id="input-company" name="company" required placeholder="Ex: Google" />
                     </div>
                     <div class="form-group">
-                        <label for="input-title">Poste</label>
+                        <label for="input-title">Job Title</label>
                         <input type="text" id="input-title" name="title" required placeholder="Ex: SWE Intern" />
                     </div>
                     <div class="form-group">
-                        <label for="input-type">Type</label>
-                        <input type="text" id="input-type" name="type" placeholder="Ex: CDI, Stage" />
+                        <label for="input-type">Contract Type</label>
+                        <input type="text" id="input-type" name="type" placeholder="Ex: Full-Time, Internship" />
                     </div>
                     <div class="form-group">
                         <label for="input-date">Date</label>
                         <input type="date" id="input-date" name="application_date" />
                     </div>
                     <div class="form-group">
-                        <label for="input-status">Statut</label>
+                        <label for="input-status">Status</label>
                         <select id="input-status" name="status">
-                            <option value="À postuler">À postuler</option>
-                            <option value="Postulé">Postulé</option>
-                            <option value="Entretien">Entretien</option>
-                            <option value="Refus">Refus</option>
-                            <option value="Accepté">Accepté</option>
+                            <option value="To Apply">To Apply</option>
+                            <option value="Applied">Applied</option>
+                            <option value="Interview">Interview</option>
+                            <option value="Rejected">Rejected</option>
+                            <option value="Accepted">Accepted</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="input-link">Lien</label>
+                        <label for="input-link">Job Link</label>
                         <input type="url" id="input-link" name="link" placeholder="https://..." />
                     </div>
                     <div class="form-group form-group-full">
                         <label for="input-notes">Notes</label>
-                        <textarea id="input-notes" name="notes" rows="2" placeholder="Notes libres..."></textarea>
+                        <textarea id="input-notes" name="notes" rows="2" placeholder="Additional notes..."></textarea>
                     </div>
                 </div>
-                <button type="submit" id="btn-submit">+ Ajouter</button>
+                <button type="submit" id="btn-submit">+ Add Application</button>
             </form>
         </section>
 
         <!-- Applications table -->
         <section id="table">
-            <h2>Candidatures</h2>
+            <h2>Applications</h2>
             <div class="table-wrapper">
                 <table>
                     <thead>
                         <tr>
-                            <th>Entreprise</th>
-                            <th>Poste</th>
+                            <th>Company</th>
+                            <th>Job Title</th>
                             <th>Type</th>
                             <th>Date</th>
-                            <th>Statut</th>
-                            <th>Lien</th>
+                            <th>Status</th>
+                            <th>Link</th>
                             <th>Notes</th>
                             <th>Actions</th>
                         </tr>
@@ -121,7 +121,7 @@
     </main>
 
     <footer>
-        <span id="footer-status">Serveur : non connecté</span>
+        <span id="footer-status">Server: Disconnected</span>
     </footer>
 
     <script src="popup.js" defer></script>

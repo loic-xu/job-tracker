@@ -1,3 +1,5 @@
 id,company,title,type,application_date,status,notes,link
-1,Google,SWE Intern,Stage,2026-08-01,Postulé,Très bon match,https://careers.google.com/jobs/123
-2,Airbus,Data Analyst Junior,Alternance,2026-08-03,Entretien,Entretien prévu le 15/08,https://jobboard.com/xyz
+1,Google,SWE Intern,CDI,2026-08-01,Applied,Très bon match,https://careers.google.com/jobs/123
+2,Airbus,Data Analyst Junior,CDD,2026-08-03,Interview,Entretien prévu le 15/08,https://jobboard.com/xyz
+
+
