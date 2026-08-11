@@ -1,5 +1,5 @@
-from exceptions import CSVLockedError
-from csv_repository import CandidatureRepository
+from server.exceptions import CSVLockedError
+from server.csv_repository import CandidatureRepository
 import pytest
 import os
 import pandas as pd

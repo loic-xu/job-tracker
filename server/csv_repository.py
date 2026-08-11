@@ -3,7 +3,7 @@ import pandas as pd
 import os
 import logging
 from dotenv import load_dotenv
-from exceptions import CSVLockedError
+from server.exceptions import CSVLockedError
 
 logger = logging.getLogger(__name__)
 load_dotenv()

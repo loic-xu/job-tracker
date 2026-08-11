@@ -4,3 +4,8 @@ __pycache__/
 .env
 job-tracker-env
 .agents
+
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
