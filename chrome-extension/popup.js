@@ -296,6 +296,7 @@ async function handleAddSubmit(event) {
     try {
         await apiAddApplication(payload);
         form.reset();
+        setDefaultTodayDate();
         await refreshDashboard();
     } catch (err) {
         console.error("Failed to create application:", err);
@@ -362,6 +363,36 @@ async function refreshDashboard() {
 // ── Lifecycle Initialization ───────────────────────────────────────────
 
 /**
+ * Auto-populates the Job Link input field with the active browser tab URL.
+ */
+async function autoPopulateActiveTabUrl() {
+    const linkInput = document.getElementById("input-link");
+    if (!linkInput) return;
+
+    try {
+        if (typeof chrome !== "undefined" && chrome.tabs && chrome.tabs.query) {
+            const [activeTab] = await chrome.tabs.query({ active: true, currentWindow: true });
+            if (activeTab && activeTab.url && !activeTab.url.startsWith("chrome://")) {
+                linkInput.value = activeTab.url;
+            }
+        }
+    } catch (err) {
+        console.error("Failed to query active tab URL:", err);
+    }
+}
+
+/**
+ * Sets the date input field default value to today (YYYY-MM-DD).
+ */
+function setDefaultTodayDate() {
+    const dateInput = document.getElementById("input-date");
+    if (dateInput && !dateInput.value) {
+        const today = new Date().toISOString().split("T")[0];
+        dateInput.value = today;
+    }
+}
+
+/**
  * Extension popup lifecycle initialization entry point.
  */
 async function init() {
@@ -370,6 +401,8 @@ async function init() {
         addForm.addEventListener("submit", handleAddSubmit);
     }
 
+    setDefaultTodayDate();
+    await autoPopulateActiveTabUrl();
     await refreshDashboard();
 }
 

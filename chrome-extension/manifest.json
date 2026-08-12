@@ -3,6 +3,9 @@
     "name": "Job Tracker",
     "version": "1.0.0",
     "description": "Chrome extension that allows to save and tracks the jobs.",
+    "permissions": [
+        "activeTab"
+    ],
     "host_permissions": [
         "http://localhost:5000/*"
     ],
