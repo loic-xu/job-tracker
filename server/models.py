@@ -1,5 +1,4 @@
 from pydantic import BaseModel, ConfigDict
-from typing import Optional
 
 
 class ApplicationCreate(BaseModel):
@@ -19,13 +18,13 @@ class ApplicationCreate(BaseModel):
 class ApplicationUpdate(BaseModel):
     """Input model for updating an existing job application (PUT)."""
 
-    company: Optional[str] = None
-    title: Optional[str] = None
-    type: Optional[str] = None
-    application_date: Optional[str] = None
-    status: Optional[str] = None
-    notes: Optional[str] = None
-    link: Optional[str] = None
+    company: str | None = None
+    title: str | None = None
+    type: str | None = None
+    application_date: str | None = None
+    status: str | None = None
+    notes: str | None = None
+    link: str | None = None
 
 
 class ApplicationResponse(BaseModel):

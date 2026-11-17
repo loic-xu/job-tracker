@@ -16,3 +16,18 @@ venv/
 
 # Agent Configuration
 .agents/
+
+# Logs
+*.log
+
+# OS-generated
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Lock file (reproducible via uv sync)
+uv.lock

@@ -1,15 +1,17 @@
-from fastapi import FastAPI, HTTPException, status, Request
-from server.models import (
-    ApplicationCreate,
-    ApplicationUpdate,
-    ApplicationResponse,
-    StatsResponse,
-)
-from server.csv_repository import CandidatureRepository
+import logging
+
+from fastapi import FastAPI, HTTPException, Request, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
+
+from server.csv_repository import CandidatureRepository
 from server.exceptions import CSVLockedError
-import logging
+from server.models import (
+    ApplicationCreate,
+    ApplicationResponse,
+    ApplicationUpdate,
+    StatsResponse,
+)
 
 app = FastAPI(
     title="Job Tracker API",

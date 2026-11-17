@@ -1,7 +1,9 @@
-from fastapi.testclient import TestClient
-from server.main import app, candidature
-import pytest
 from pathlib import Path
+
+import pytest
+from fastapi.testclient import TestClient
+
+from server.main import app, candidature
 
 
 @pytest.fixture
