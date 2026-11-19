@@ -134,6 +134,23 @@ job-tracker/
 
 ---
 
+## 💡 Architectural Trade-offs: Backend API vs. Browser-only Storage
+
+A valid architectural question is: **why build a dedicated Python/FastAPI backend rather than a standalone Chrome extension using browser storage (`chrome.storage.local`)?**
+
+### Pure Browser Extension (`chrome.storage.local`)
+- **Pros**: Zero installation steps, no local server required, simple one-click distribution.
+- **Cons**: Data remains sandboxed inside the browser profile and is permanently wiped if the extension is uninstalled. The user cannot directly open or modify the data in external spreadsheet tools (Excel, LibreOffice) or external data scripts.
+
+### Decoupled Client-Server Approach (Current Design)
+- **Data ownership & durability**: Application records persist directly on your file system in a standard, Excel-compatible CSV file. Even if the extension is removed, your job tracking history remains completely safe.
+- **Interoperability**: The file can be opened, analyzed, or updated directly via desktop applications, or scripted with data analysis tools (Pandas, Jupyter notebooks).
+- **Extensible REST API**: Isolating the data layer behind a REST API makes it easy to attach future clients (a desktop dashboard, automated job scraper scripts, or webhook notifications) or swap the storage engine (e.g. SQLite, PostgreSQL) without touching the Chrome extension.
+- **Engineering practices**: Demonstrates end-to-end full-stack practices including input sanitization, the Repository pattern, automated testing, and type safety.
+
+---
+
 ## 📄 License
 
 This project is licensed under the [MIT License](LICENSE).
+
